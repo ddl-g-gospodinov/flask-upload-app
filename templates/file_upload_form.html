@@ -1,0 +1,27 @@
+<html>  
+<head>  
+    <title>upload</title>  
+</head>  
+<body>  
+<center>
+     <hr class="rounded">
+     <br>
+     <p> <b>To upload files using cURL you can run:</b> curl -X POST https://<mark>{{ BASEURL }}</mark>/{{ DUSER }}/{{ DPROJECT }}/r/notebookSession/{{ DRUNID }}/success -F file=@<mark>PATH TO FILE </mark></p> 
+     <br>
+     <hr class="rounded">
+     <br>
+     <form action = "success" method = "post" enctype="multipart/form-data">  
+        <input type="file" name="file" /> 
+        <input type = "submit" value="Upload">
+     </form>
+     <br>
+<hr class="rounded">
+     <p> Uploaded files will be stored under the systempath <mark> {{ MYPATH }}</mark>. </p>
+     <p> Or you can find the files in the Domino UI under the local dataset of project <mark>{{ DPROJECT }}</mark></p> 
+<hr class="rounded">
+     <p> When a large upload size is needed make sure to modify Domino central config key "<mark>com.cerebro.domino.computegrid.kubernetes.apps.nginx.clientBodyMaxSizeMiB</mark>" , the default value is 25 MiB .</p>  
+<hr class="rounded">
+
+</center>
+</body>  
+</html>  
